@@ -20,7 +20,7 @@ function validataSubsequences(arrays, subsetSequence) {
   for (let i in subsetSequence) {
     let value = subsetSequence[i];
     for (let j in arrays) {
-      if(value === arrays[j]){
+      if (value === arrays[j]) {
         data.push(value);
       }
     }
@@ -28,4 +28,17 @@ function validataSubsequences(arrays, subsetSequence) {
   return data.length === subsetSequence.length;
 }
 
+function validataSubseqSecond(arrays, subsetSequence) {
+  let index = 0;
+  for (let value of arrays) {
+    if (index === subsetSequence.length) break;
+    if (value === subsetSequence[index]) {
+      index++;
+    }
+  }
+  return index === sequence.length;
+}
+
 console.log(validataSubsequences(array, sequence));
+
+console.log(validataSubseqSecond(array, sequence));
